@@ -25,6 +25,11 @@ def get_indices(index):
     return es.cat.indices(index=index)
 
 
+def refresh_index(index):
+    """索引的刷新"""
+    es.indices.refresh(index=index)
+
+
 if __name__ == '__main__':
     print('es cluster health is : %s' % get_indices('kibana_sample_data_ecommerce'))
     close_es()
